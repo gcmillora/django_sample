@@ -158,3 +158,11 @@ CORS_ORIGIN_WHITELIST = [
     "http://localhost:3000",
     "http://localhost:8000",
 ]
+
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles_build", "static")
+MEDIA_URLS = "/media/"
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+
+# Also Make aure To set allowed_hosts to '*'
+
+ALLOWED_HOSTS = ["*"]
