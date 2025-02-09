@@ -22,8 +22,8 @@ CLIENT_ID = os.getenv("CLIENT_ID")
 CLIENT_SECRET = os.getenv("CLIENT_SECRET")
 
 # Update the token URLs to use the correct path
-TOKEN_URL = "http://localhost:8000/o/token/"
-REVOKE_TOKEN_URL = "http://localhost:8000/o/revoke_token/"
+TOKEN_URL = os.getenv("API_URL") + "/o/token/"
+REVOKE_TOKEN_URL = os.getenv("API_URL") + "/o/revoke_token/"
 
 
 class AuthenticationRegisterView(APIView):
@@ -34,7 +34,7 @@ class AuthenticationRegisterView(APIView):
         if serializer.is_valid():
             serializer.save()
             r = requests.post(
-                "http://localhost:8000/o/token/",
+                TOKEN_URL,
                 data={
                     "grant_type": "password",
                     "username": request.data["email"],

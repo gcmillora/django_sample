@@ -152,11 +152,13 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 ALLOWED_ORIGINS = [
     "http://localhost:8000",
     "http://localhost:3000",
+    "https://django-sample-lyart.vercel.app",
 ]
 
 CORS_ORIGIN_WHITELIST = [
     "http://localhost:3000",
     "http://localhost:8000",
+    "https://django-sample-lyart.vercel.app",
 ]
 
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles_build", "static")
